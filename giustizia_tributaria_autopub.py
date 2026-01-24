@@ -76,9 +76,7 @@ class OpenAICompat:
         except: return {"outcome":"unknown"}
     def write_commentary_html(self, meta: Dict, url: str, text: str) -> str:
         system = "Sei un avvocato tributarista. Scrivi un commento HTML."
-        user = f"Metadati: {json.dumps(meta)}
-Fonte: {url}
-Testo: {text[:4000]}"
+        user = f"Metadati: {json.dumps(meta) Fonte: {url} Testo: {text[:4000]}"
         r = self.client.chat.completions.create(model=self.model, messages=[{"role":"system","content":system},{"role":"user","content":user}], temperature=0.2)
         return r.choices[0].message.content
 
