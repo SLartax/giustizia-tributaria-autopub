@@ -68,8 +68,7 @@ class OpenAICompat:
         self.model = model
     def classify_favorable(self, text: str) -> Dict:
         system = "Sei un avvocato tributarista. Classifica se la decisione è favorevole al contribuente."
-        user = f"Testo: {text[:6000]}
-Restituisci JSON: outcome, confidence, rationale."
+        user = f"Testo: {text[:6000]} Restituisci JSON: outcome, confidence, rationale."
         r = self.client.chat.completions.create(model=self.model, messages=[{"role":"system","content":system},{"role":"user","content":user}], temperature=0)
         try:
             content = r.choices[0].message.content
