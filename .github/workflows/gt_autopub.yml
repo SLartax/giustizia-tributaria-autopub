@@ -35,9 +35,5 @@ jobs:
           WP_BASE_URL: ${{ secrets.WP_BASE_URL }}
           WP_USER: ${{ secrets.WP_USER }}
           WP_PASS: ${{ secrets.WP_PASS }}
-          GT_BASE_URL: ${{ secrets.GT_BASE_URL }}
-          GT_SEARCH_PATH: ${{ secrets.GT_SEARCH_PATH }}
-          GT_MAX_ITEMS_PER_RUN: ${{ secrets.GT_MAX_ITEMS_PER_RUN }}
-          GT_MAX_PUBLISH_PER_RUN: ${{ secrets.GT_MAX_PUBLISH_PER_RUN }}
         run: |
           python giustizia_tributaria_autopub.py
