@@ -2,8 +2,8 @@ name: GT AutoPub
 
 on:
   schedule:
-    # 06:10 CET ~ 05:10 UTC (regola per UTC)
-    - cron: "10 5 * * *"
+        # 16:00 CET ~ 15:00 UTC (regola per UTC)
+        - cron: "0 15 * * *"  # Runs at 15:00 UTC = 16:00 CET
   workflow_dispatch:
 
 jobs:
