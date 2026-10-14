@@ -1,9 +1,7 @@
 name: GT AutoPub
 
+# DISABLED: automatic WordPress drafting pipeline stopped (2026-10-14).
 on:
-  schedule:
-        # 16:00 CET ~ 15:00 UTC (regola per UTC)
-        - cron: "0 15 * * *"  # Runs at 15:00 UTC = 16:00 CET
   workflow_dispatch:
 
 permissions:
