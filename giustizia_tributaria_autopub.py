@@ -573,6 +573,9 @@ def build_full_post_html(d: Decision, analysis: Dict[str, Any]) -> Tuple[str, st
 # PIPELINE
 # =========================
 def run():
+    if os.getenv("GT_AUTOPUB_ENABLED", "0") != "1":
+        print("GT AutoPub disattivato su richiesta (2026-10-14): nessuna bozza creata.")
+        return
     print("=== GIUSTIZIA TRIBUTARIA AUTOPUB ===")
     if not OPENAI_API_KEY:
         raise RuntimeError("OPENAI_API_KEY mancante")
